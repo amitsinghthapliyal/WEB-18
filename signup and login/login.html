@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>sign in</title>
+</head>
+<body>
+    <img src="https://sso.masaischool.com/brand_dark.svg" alt="logo">
+    <form id="signInForm">
+        <h1>Log In</h1>
+        <label for="email">Enter your email</label>
+        <input id="email" type="email" palaceholder="Enter your email">
+        <label for="password">Enter your password</label>
+        <input id="password" type="password">
+        <input id="submit" type="submit">
+    </form>
+</body>
+</html>
+
+<script>
+    document.querySelector("#signInForm").addEventListener("submit", signIn)
+
+    function signIn(){
+        event.preventDefault();
+
+        var userArr = JSON.parse(localStorage.getItem("userData"))
+
+            var email = signInForm.email.value;
+            var pass = signInForm.password.value;
+
+            if(result.userEmail == email && result.userPassword == pass){
+            return alert("Log In Successfully !")
+        }
+            else if (email == null || pass == null){
+            return alert("Fill the details !")
+        }
+        else{
+            return alert("User not found!")
+        }
+   
+    }
+</script>
